@@ -25,7 +25,7 @@ import Foundation
 //let CROSSFIRE:Map = Map("CROSSFIRE", index: 15)
 //let UNDERMINE:Map = Map("UNDERMINE", index: 16)
 
-class Map {
+class Map:Codable {
     let name:String
     let index:Int
     let isInSnow:Bool

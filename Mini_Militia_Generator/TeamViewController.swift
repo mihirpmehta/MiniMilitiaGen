@@ -9,17 +9,17 @@
 import UIKit
 import AVFoundation
 
-let KillerMachine:Player = Player(name: "Killer Machine (Karn)", photoName: "karn", originalName: "Karn", style: .Attacking, strength: 10)
-let LongPenzer:Player = Player(name: "Long Penzer (Bandish)", photoName: "bandish", originalName: "Bandish", style: .Attacking, strength: 9.5)
-let Singham:Player = Player(name: "Singham (Mihir)", photoName: "mihir", originalName: "Mihir", style: .Attacking, strength: 9.5)
-let Wolverine:Player = Player(name: "Wolverine (Niraj)", photoName: "niraj", originalName: "Niraj", style: .Attacking, strength: 8.5)
-let Bond:Player = Player(name: "Bond (Ketan)", photoName: "ketan", originalName: "Ketan", style: .Attacking, strength: 9)
-let Mogambo:Player = Player(name: "Mogambo (Paresh)", photoName: "paresh", originalName: "Paresh", style: .Defencive, strength: 9)
-let Rambo:Player = Player(name: "Rambo (Kundan)", photoName: "kundan", originalName: "Kundan", style: [.Attacking,.Defencive], strength: 8)
-let Mini:Player = Player(name: "Contract Killer (Ohm)", photoName: "ohm", originalName: "Ohm", style: [.Attacking,.Defencive], strength: 7)
-let Animal:Player = Player(name: "Hulk (Tejas)", photoName: "tejas", originalName: "Tejas", style:  [.Attacking,.Defencive], strength: 7)
-let Chikka:Player = Player(name: "Chikka (Chirag)", photoName: "chirag", originalName: "Chirag", style:  [.Attacking,.Defencive], strength: 7)
-let Goldy:Player = Player(name: "Goldy (Anup)", photoName: "anup", originalName: "Anup", style:  [.Attacking,.Defencive], strength: 7)
+let KillerMachine:Player = Player(name: "Killer Machine", photoName: "karn", originalName: "Karn", style: .Attacking, strength: 10)
+let LongPenzer:Player = Player(name: "Long Penzer", photoName: "bandish", originalName: "Bandish", style: .Attacking, strength: 9.5)
+let Singham:Player = Player(name: "Singham", photoName: "mihir", originalName: "Mihir", style: .Attacking, strength: 9.5)
+let Wolverine:Player = Player(name: "Wolverine", photoName: "niraj", originalName: "Niraj", style: .Attacking, strength: 8.5)
+let Bond:Player = Player(name: "Bond", photoName: "ketan", originalName: "Ketan", style: .Attacking, strength: 9)
+let Mogambo:Player = Player(name: "Mogambo", photoName: "paresh", originalName: "Paresh", style: .Defencive, strength: 9)
+let Rambo:Player = Player(name: "Rambo", photoName: "kundan", originalName: "Kundan", style: [.Attacking,.Defencive], strength: 8)
+let Mini:Player = Player(name: "Contract Killer", photoName: "ohm", originalName: "Ohm", style: [.Attacking,.Defencive], strength: 7.5)
+let Animal:Player = Player(name: "Hulk", photoName: "tejas", originalName: "Tejas", style:  [.Attacking,.Defencive], strength: 7)
+let Chikka:Player = Player(name: "Chikka", photoName: "chirag", originalName: "Chirag", style:  [.Attacking,.Defencive], strength: 7)
+let Goldy:Player = Player(name: "Goldy", photoName: "anup", originalName: "Anup", style:  [.Attacking,.Defencive], strength: 7)
 
 protocol PlayerPresenceChangeProtocol:class {
     func changePresenceFor(player:Player,isPresent:Bool)
@@ -53,15 +53,22 @@ extension Array {
     func chunked(by chunkSize: Int) -> [[Element]] {
         
         if self.count > 0 {
-        
-        return stride(from: 0, to: self.count, by: chunkSize).map {
-            Array(self[$0..<Swift.min($0 + chunkSize, self.count)])
-        }
+            return stride(from: 0, to: self.count, by: chunkSize).map {
+                Array(self[$0..<Swift.min($0 + chunkSize, self.count)])
+            }
         } else {
             return [self,self]
         }
     }
 }
+
+extension Double {
+    func roundToDecimal(_ fractionDigits: Int) -> Double {
+        let multiplier = pow(10, Double(fractionDigits))
+        return Darwin.round(self * multiplier) / multiplier
+    }
+}
+
 class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,PlayerPresenceChangeProtocol {
     
     
@@ -78,7 +85,7 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var extraPlayers:[Player] = []
     
     var player: AVAudioPlayer?
-
+    
     @IBOutlet weak var generateButton: UIButton!
     @IBOutlet weak var playerTableView: UITableView!
     override func viewDidLoad() {
@@ -90,11 +97,11 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         presentOtherPlayers = otherPlayers
         
         self.title = "Team Generator"
-
+        
         playerTableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
-
+    
     func playSound(for player1:Player) {
         var soundName:String = ""
         if player1.name ==  KillerMachine.name{
@@ -153,7 +160,7 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             print(error.localizedDescription)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -189,7 +196,7 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let playerCell:PlayerCell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as! PlayerCell
         let player:Player
         if teamGenerated == false {
-             player = allPlayers[indexPath.row]
+            player = allPlayers[indexPath.row]
         } else {
             if indexPath.section == 0 {
                 player = blueTeam[indexPath.row]
@@ -199,7 +206,7 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 player = extraPlayers[indexPath.row]
             }
         }
-
+        
         playerCell.presenceDelegate = self
         playerCell.player = player
         playerCell.playerName.text = player.name
@@ -217,7 +224,7 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             }
             else{
                 playerCell.backgroundColor = UIColor.clear
-
+                
             }
         }
         else{
@@ -227,21 +234,32 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         return playerCell
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if teamGenerated == false {
             return ""
         } else {
+            var totalStrength:Double = 0.0
+            var bTeamStrength:Double = 0.0
+            var oTeamStrength:Double = 0.0
+            for player:Player in self.blueTeam {
+                totalStrength += player.strength
+                bTeamStrength += player.strength
+            }
+            for player:Player in self.orangeTeam {
+                totalStrength += player.strength
+                oTeamStrength += player.strength
+            }
             if section == 0 {
-                return "Blue Team"
+                return "Blue Team( Winning chance: \(((bTeamStrength/totalStrength)*100).roundToDecimal(2))%)"
             } else if section == 1 {
-                return "Orange Team"
+                return "Orange Team( Winning chance: \(((oTeamStrength/totalStrength)*100).roundToDecimal(2))%)"
             } else {
                 return "Both"
             }
         }
     }
-
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if teamGenerated == false {
             return 0
@@ -272,22 +290,22 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
-//    private func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
-////        if teamGenerated == false{
-////            return nil
-////        }
-//
-//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
-//        if (section == 0) {
-//            headerView.backgroundColor = UIColor.blue
-//        } else if (section == 0) {
-//            headerView.backgroundColor = UIColor.orange
-//        }
-//        else{
-//            headerView.backgroundColor = UIColor.gray
-//        }
-//        return headerView
-//    }
+    //    private func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
+    ////        if teamGenerated == false{
+    ////            return nil
+    ////        }
+    //
+    //        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+    //        if (section == 0) {
+    //            headerView.backgroundColor = UIColor.blue
+    //        } else if (section == 0) {
+    //            headerView.backgroundColor = UIColor.orange
+    //        }
+    //        else{
+    //            headerView.backgroundColor = UIColor.gray
+    //        }
+    //        return headerView
+    //    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let player:Player
@@ -302,7 +320,7 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 player = extraPlayers[indexPath.row]
             }
         }
-
+        
         self.playSound(for: player)
     }
     
@@ -350,7 +368,7 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             // Rendomize array
             var shuffledMerquePlayer:[Player] = []
             var shuffledOtherPlayers:[Player] = []
-
+            
             if self.presentMarqueePlayers.count%2 == 0 && self.presentOtherPlayers.count%2 == 0 {
                 // If both are Even
                 // Simply split it in 2 after shuffling
@@ -365,24 +383,24 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 // If both are Odd
                 // Add Strongest Player of Other player to Marquee player and shuffle it
                 //if self.presentOtherPlayers.count > 0 && self.presentMarqueePlayers.count > 0 {
-                    self.presentMarqueePlayers.append(self.presentOtherPlayers.first!)
-                    self.presentOtherPlayers.removeFirst()
-                    shuffledMerquePlayer = self.presentMarqueePlayers.shuffled()
-                    shuffledOtherPlayers = self.presentOtherPlayers.shuffled()
+                self.presentMarqueePlayers.append(self.presentOtherPlayers.first!)
+                self.presentOtherPlayers.removeFirst()
+                shuffledMerquePlayer = self.presentMarqueePlayers.shuffled()
+                shuffledOtherPlayers = self.presentOtherPlayers.shuffled()
                 
-                    self.generateTeamFromShuffledArray(shuffledMerquePlayer: shuffledMerquePlayer, shuffledOtherPlayers: shuffledOtherPlayers)
-//                } else {
-//                    // Simply make three team of all player
-//                    shuffledMerquePlayer = self.allPresentPlayer.shuffled()
-//
-//
-//                    var chunk:[[Player]] = shuffledMerquePlayer.chunked(by: shuffledMerquePlayer.count/2)
-//                    self.blueTeam = chunk[0]
-//                    self.orangeTeam = chunk[1]
-//                    self.otherPlayers = chunk[2]
-//                }
+                self.generateTeamFromShuffledArray(shuffledMerquePlayer: shuffledMerquePlayer, shuffledOtherPlayers: shuffledOtherPlayers)
+                //                } else {
+                //                    // Simply make three team of all player
+                //                    shuffledMerquePlayer = self.allPresentPlayer.shuffled()
+                //
+                //
+                //                    var chunk:[[Player]] = shuffledMerquePlayer.chunked(by: shuffledMerquePlayer.count/2)
+                //                    self.blueTeam = chunk[0]
+                //                    self.orangeTeam = chunk[1]
+                //                    self.otherPlayers = chunk[2]
+                //                }
             } else if self.presentMarqueePlayers.count%2 == 0 && self.presentOtherPlayers.count%2 != 0 {
-                 // If marqee is Even and others are odd
+                // If marqee is Even and others are odd
                 shuffledOtherPlayers = self.presentOtherPlayers.shuffled()
                 
                 if let player:Player = shuffledOtherPlayers.last {
@@ -415,7 +433,7 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 }
                 
                 shuffledMerquePlayer = self.presentMarqueePlayers.shuffled()
-               
+                
                 
                 self.generateTeamFromShuffledArray(shuffledMerquePlayer: shuffledMerquePlayer, shuffledOtherPlayers: shuffledOtherPlayers)
                 
@@ -464,13 +482,13 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

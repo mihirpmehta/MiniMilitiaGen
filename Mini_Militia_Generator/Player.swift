@@ -10,7 +10,7 @@
 
 import Foundation
 
-struct PlayingStyle: OptionSet {
+struct PlayingStyle: OptionSet,Codable {
     public let rawValue: Int
     public init(rawValue: Int) {
         self.rawValue = rawValue
@@ -22,7 +22,7 @@ struct PlayingStyle: OptionSet {
 
 
 
-class Player {
+class Player:Codable {
     let name:String
     let photoName:String
     let originalName:String

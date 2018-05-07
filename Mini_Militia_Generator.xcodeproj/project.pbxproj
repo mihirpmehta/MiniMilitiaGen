@@ -17,6 +17,7 @@
 		3638A8142078C163007968E3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638A8132078C163007968E3 /* Player.swift */; };
 		3638A8172078C43C007968E3 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638A8162078C43C007968E3 /* TeamViewController.swift */; };
 		36573163207D309C00679959 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36573162207D309C00679959 /* PlayerCell.swift */; };
+		36D74B44209F155F0037BDFD /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D74B43209F155F0037BDFD /* Match.swift */; };
 		DFA9241B209C7B13004CA5A9 /* my_name_is_bond.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFA92416209C7B13004CA5A9 /* my_name_is_bond.mp3 */; };
 		DFA9241C209C7B13004CA5A9 /* singham_awesome.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFA92417209C7B13004CA5A9 /* singham_awesome.mp3 */; };
 		DFA9241D209C7B13004CA5A9 /* message_d_mogambo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFA92418209C7B13004CA5A9 /* message_d_mogambo.mp3 */; };
@@ -37,6 +38,7 @@
 		3638A8132078C163007968E3 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		3638A8162078C43C007968E3 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		36573162207D309C00679959 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		36D74B43209F155F0037BDFD /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		DFA92416209C7B13004CA5A9 /* my_name_is_bond.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = my_name_is_bond.mp3; sourceTree = "<group>"; };
 		DFA92417209C7B13004CA5A9 /* singham_awesome.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = singham_awesome.mp3; sourceTree = "<group>"; };
 		DFA92418209C7B13004CA5A9 /* message_d_mogambo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = message_d_mogambo.mp3; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				3638A8162078C43C007968E3 /* TeamViewController.swift */,
 				3600023B1FD7EA0900662997 /* MiniMilitiaCell.swift */,
 				3600023D1FD7FEA500662997 /* Map.swift */,
+				36D74B43209F155F0037BDFD /* Match.swift */,
 				3638A8132078C163007968E3 /* Player.swift */,
 				36573162207D309C00679959 /* PlayerCell.swift */,
 				3600022D1FD7E4D400662997 /* Main.storyboard */,
@@ -182,6 +185,7 @@
 				3600022C1FD7E4D400662997 /* ViewController.swift in Sources */,
 				3638A8172078C43C007968E3 /* TeamViewController.swift in Sources */,
 				36573163207D309C00679959 /* PlayerCell.swift in Sources */,
+				36D74B44209F155F0037BDFD /* Match.swift in Sources */,
 				3600022A1FD7E4D400662997 /* AppDelegate.swift in Sources */,
 				3600023E1FD7FEA500662997 /* Map.swift in Sources */,
 				3638A8142078C163007968E3 /* Player.swift in Sources */,
