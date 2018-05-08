@@ -18,6 +18,13 @@
 		3638A8172078C43C007968E3 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638A8162078C43C007968E3 /* TeamViewController.swift */; };
 		36573163207D309C00679959 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36573162207D309C00679959 /* PlayerCell.swift */; };
 		36D74B44209F155F0037BDFD /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D74B43209F155F0037BDFD /* Match.swift */; };
+		DF6A5C2A20A17CB100260AC7 /* hulk_smash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF6A5C2920A17CB100260AC7 /* hulk_smash.mp3 */; };
+		DF6A5C2C20A17CBC00260AC7 /* jingu_chikka.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF6A5C2B20A17CBB00260AC7 /* jingu_chikka.mp3 */; };
+		DF6A5C2E20A17CD700260AC7 /* killermachine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF6A5C2D20A17CD600260AC7 /* killermachine.mp3 */; };
+		DF6A5C3020A17D2800260AC7 /* ironmanOhm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF6A5C2F20A17D2800260AC7 /* ironmanOhm.mp3 */; };
+		DF6A5C3220A17D5B00260AC7 /* ramboJohn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF6A5C3120A17D5A00260AC7 /* ramboJohn.mp3 */; };
+		DF6A5C3420A1835700260AC7 /* rudrasa_bahubaliGoldy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF6A5C3320A1835700260AC7 /* rudrasa_bahubaliGoldy.mp3 */; };
+		DF6A5C3620A1836A00260AC7 /* spartanBandish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF6A5C3520A1836A00260AC7 /* spartanBandish.mp3 */; };
 		DFA9241B209C7B13004CA5A9 /* my_name_is_bond.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFA92416209C7B13004CA5A9 /* my_name_is_bond.mp3 */; };
 		DFA9241C209C7B13004CA5A9 /* singham_awesome.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFA92417209C7B13004CA5A9 /* singham_awesome.mp3 */; };
 		DFA9241D209C7B13004CA5A9 /* message_d_mogambo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFA92418209C7B13004CA5A9 /* message_d_mogambo.mp3 */; };
@@ -39,6 +46,13 @@
 		3638A8162078C43C007968E3 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		36573162207D309C00679959 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		36D74B43209F155F0037BDFD /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		DF6A5C2920A17CB100260AC7 /* hulk_smash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hulk_smash.mp3; sourceTree = "<group>"; };
+		DF6A5C2B20A17CBB00260AC7 /* jingu_chikka.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jingu_chikka.mp3; sourceTree = "<group>"; };
+		DF6A5C2D20A17CD600260AC7 /* killermachine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = killermachine.mp3; sourceTree = "<group>"; };
+		DF6A5C2F20A17D2800260AC7 /* ironmanOhm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ironmanOhm.mp3; sourceTree = "<group>"; };
+		DF6A5C3120A17D5A00260AC7 /* ramboJohn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ramboJohn.mp3; sourceTree = "<group>"; };
+		DF6A5C3320A1835700260AC7 /* rudrasa_bahubaliGoldy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rudrasa_bahubaliGoldy.mp3; sourceTree = "<group>"; };
+		DF6A5C3520A1836A00260AC7 /* spartanBandish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spartanBandish.mp3; sourceTree = "<group>"; };
 		DFA92416209C7B13004CA5A9 /* my_name_is_bond.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = my_name_is_bond.mp3; sourceTree = "<group>"; };
 		DFA92417209C7B13004CA5A9 /* singham_awesome.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = singham_awesome.mp3; sourceTree = "<group>"; };
 		DFA92418209C7B13004CA5A9 /* message_d_mogambo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = message_d_mogambo.mp3; sourceTree = "<group>"; };
@@ -101,6 +115,13 @@
 				DFA92418209C7B13004CA5A9 /* message_d_mogambo.mp3 */,
 				DFA92419209C7B13004CA5A9 /* wolverine_best.mp3 */,
 				DFA9241A209C7B13004CA5A9 /* live_for_nothing.mp3 */,
+				DF6A5C2B20A17CBB00260AC7 /* jingu_chikka.mp3 */,
+				DF6A5C2D20A17CD600260AC7 /* killermachine.mp3 */,
+				DF6A5C2920A17CB100260AC7 /* hulk_smash.mp3 */,
+				DF6A5C2F20A17D2800260AC7 /* ironmanOhm.mp3 */,
+				DF6A5C3120A17D5A00260AC7 /* ramboJohn.mp3 */,
+				DF6A5C3320A1835700260AC7 /* rudrasa_bahubaliGoldy.mp3 */,
+				DF6A5C3520A1836A00260AC7 /* spartanBandish.mp3 */,
 			);
 			path = Tones;
 			sourceTree = "<group>";
@@ -164,11 +185,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF6A5C3620A1836A00260AC7 /* spartanBandish.mp3 in Resources */,
+				DF6A5C3220A17D5B00260AC7 /* ramboJohn.mp3 in Resources */,
 				DFA9241D209C7B13004CA5A9 /* message_d_mogambo.mp3 in Resources */,
+				DF6A5C2E20A17CD700260AC7 /* killermachine.mp3 in Resources */,
+				DF6A5C2C20A17CBC00260AC7 /* jingu_chikka.mp3 in Resources */,
 				DFA9241B209C7B13004CA5A9 /* my_name_is_bond.mp3 in Resources */,
 				360002341FD7E4D400662997 /* LaunchScreen.storyboard in Resources */,
 				DFA9241E209C7B13004CA5A9 /* wolverine_best.mp3 in Resources */,
 				DFA9241C209C7B13004CA5A9 /* singham_awesome.mp3 in Resources */,
+				DF6A5C2A20A17CB100260AC7 /* hulk_smash.mp3 in Resources */,
+				DF6A5C3420A1835700260AC7 /* rudrasa_bahubaliGoldy.mp3 in Resources */,
+				DF6A5C3020A17D2800260AC7 /* ironmanOhm.mp3 in Resources */,
 				360002311FD7E4D400662997 /* Assets.xcassets in Resources */,
 				DFA9241F209C7B13004CA5A9 /* live_for_nothing.mp3 in Resources */,
 				3600022F1FD7E4D400662997 /* Main.storyboard in Resources */,

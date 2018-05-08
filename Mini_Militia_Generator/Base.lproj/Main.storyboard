@@ -235,7 +235,7 @@
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0m-Ny-25V">
-                                                    <rect key="frame" x="55" y="11.5" width="176" height="21.5"/>
+                                                    <rect key="frame" x="55" y="11" width="187" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -249,11 +249,11 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="sGY-BZ-zhU" firstAttribute="leading" secondItem="q0m-Ny-25V" secondAttribute="trailing" constant="5" id="5IL-4T-rMG"/>
                                                 <constraint firstAttribute="trailing" secondItem="sGY-BZ-zhU" secondAttribute="trailing" constant="24" id="HvQ-mI-w1V"/>
                                                 <constraint firstItem="oSe-Jk-HBT" firstAttribute="centerY" secondItem="3Rt-tw-KeF" secondAttribute="centerY" id="UD4-Dm-NOd"/>
                                                 <constraint firstItem="q0m-Ny-25V" firstAttribute="centerY" secondItem="3Rt-tw-KeF" secondAttribute="centerY" id="Uj6-qp-zxd"/>
                                                 <constraint firstItem="q0m-Ny-25V" firstAttribute="leading" secondItem="oSe-Jk-HBT" secondAttribute="trailing" constant="10" id="icg-qY-78w"/>
-                                                <constraint firstItem="sGY-BZ-zhU" firstAttribute="leading" secondItem="q0m-Ny-25V" secondAttribute="trailing" constant="16" id="mZc-gC-BMe"/>
                                                 <constraint firstItem="sGY-BZ-zhU" firstAttribute="centerY" secondItem="3Rt-tw-KeF" secondAttribute="centerY" id="rfs-q3-lW4"/>
                                                 <constraint firstItem="oSe-Jk-HBT" firstAttribute="leading" secondItem="3Rt-tw-KeF" secondAttribute="leading" constant="5" id="s4v-wJ-GhO"/>
                                             </constraints>
@@ -270,6 +270,27 @@
                                     <outlet property="delegate" destination="Fo9-rC-Ak0" id="1Yb-mJ-JPW"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEd-MR-Laa">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="423"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjg-td-QBc">
+                                        <rect key="frame" x="120" y="172" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Sl7-XM-sAx"/>
+                                            <constraint firstAttribute="width" constant="80" id="lZC-L6-4v0"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="pauseIcon"/>
+                                        <connections>
+                                            <action selector="stopPlayer" destination="Fo9-rC-Ak0" eventType="touchUpInside" id="Tqa-S1-h28"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.4822345890410959" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Hjg-td-QBc" firstAttribute="centerY" secondItem="xEd-MR-Laa" secondAttribute="centerY" id="G91-4h-Gva"/>
+                                    <constraint firstItem="Hjg-td-QBc" firstAttribute="centerX" secondItem="xEd-MR-Laa" secondAttribute="centerX" id="NMI-3p-bmk"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEE-HO-SBs">
                                 <rect key="frame" x="0.0" y="376" width="320" height="55"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -284,13 +305,17 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="xEd-MR-Laa" firstAttribute="trailing" secondItem="3VA-bk-T82" secondAttribute="trailing" id="0Oe-nA-hXY"/>
                             <constraint firstItem="iFM-YX-fn9" firstAttribute="top" secondItem="Hov-2e-9HQ" secondAttribute="top" id="HBA-v0-cFl"/>
                             <constraint firstItem="gEE-HO-SBs" firstAttribute="top" secondItem="iFM-YX-fn9" secondAttribute="bottom" id="Qbh-pU-wem"/>
                             <constraint firstItem="iFM-YX-fn9" firstAttribute="trailing" secondItem="3VA-bk-T82" secondAttribute="trailing" id="X0G-kP-icA"/>
                             <constraint firstItem="gEE-HO-SBs" firstAttribute="trailing" secondItem="3VA-bk-T82" secondAttribute="trailing" id="anT-z6-lJY"/>
+                            <constraint firstItem="xEd-MR-Laa" firstAttribute="leading" secondItem="3VA-bk-T82" secondAttribute="leading" id="dSe-7I-WIR"/>
                             <constraint firstItem="iFM-YX-fn9" firstAttribute="leading" secondItem="3VA-bk-T82" secondAttribute="leading" id="deQ-ME-X2Y"/>
                             <constraint firstItem="gEE-HO-SBs" firstAttribute="bottom" secondItem="3VA-bk-T82" secondAttribute="bottom" id="pcj-pi-R43"/>
+                            <constraint firstItem="3VA-bk-T82" firstAttribute="bottom" secondItem="xEd-MR-Laa" secondAttribute="bottom" constant="8" id="q1o-ll-Xxk"/>
                             <constraint firstItem="gEE-HO-SBs" firstAttribute="leading" secondItem="3VA-bk-T82" secondAttribute="leading" id="uVF-So-jMp"/>
+                            <constraint firstItem="xEd-MR-Laa" firstAttribute="top" secondItem="Hov-2e-9HQ" secondAttribute="top" id="udR-sj-7Yw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3VA-bk-T82"/>
                     </view>
@@ -298,7 +323,9 @@
                     <navigationItem key="navigationItem" id="HgS-o0-a6y"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
+                        <outlet property="btnPause" destination="Hjg-td-QBc" id="qhS-Oe-kZH"/>
                         <outlet property="generateButton" destination="gEE-HO-SBs" id="OLQ-5c-EqI"/>
+                        <outlet property="overlayPauseView" destination="xEd-MR-Laa" id="hLs-BO-tgc"/>
                         <outlet property="playerTableView" destination="iFM-YX-fn9" id="Tzl-IC-yRd"/>
                     </connections>
                 </viewController>
@@ -369,6 +396,7 @@
     <resources>
         <image name="CROSSFIRE" width="320" height="180"/>
         <image name="mapsIcon" width="25" height="25"/>
+        <image name="pauseIcon" width="32" height="32"/>
         <image name="playerIcon" width="20" height="20"/>
         <image name="playerIconFinal" width="25" height="25"/>
     </resources>

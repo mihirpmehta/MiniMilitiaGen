@@ -13,6 +13,7 @@ class PlayerCell: UITableViewCell {
     @IBOutlet weak var imageViewPlayerPhoto: UIImageView!
     @IBOutlet weak var playerName: UILabel!
     @IBOutlet weak var isPresentSwitch: UISwitch!
+        
     weak var player:Player?
     weak var presenceDelegate:PlayerPresenceChangeProtocol?
     override func awakeFromNib() {

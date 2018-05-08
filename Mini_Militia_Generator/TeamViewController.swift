@@ -85,9 +85,14 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var extraPlayers:[Player] = []
     
     var player: AVAudioPlayer?
+    var isSongPlaying:Bool = false
     
     @IBOutlet weak var generateButton: UIButton!
     @IBOutlet weak var playerTableView: UITableView!
+    
+    @IBOutlet weak var overlayPauseView: UIView!
+    @IBOutlet weak var btnPause: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         allPresentPlayer = marqueePlayers + otherPlayers
@@ -100,12 +105,14 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         playerTableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
+        self.overlayPauseView.isHidden = true
     }
     
     func playSound(for player1:Player) {
+        
         var soundName:String = ""
         if player1.name ==  KillerMachine.name{
-            soundName = "wolverine_best"
+            soundName = "killermachine"
         }
         else if player1.name ==  Wolverine.name{
             soundName = "wolverine_best"
@@ -117,25 +124,25 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             soundName = "my_name_is_bond"
         }
         else if player1.name ==  Rambo.name{
-            soundName = "live_for_nothing"
+            soundName = "ramboJohn"
         }
         else if player1.name ==  Mini.name{
-            soundName = "wolverine_best"
+            soundName = "ironmanOhm"
         }
         else if player1.name ==  LongPenzer.name{
-            soundName = "wolverine_best"
+            soundName = "spartanBandish"
         }
         else if player1.name ==  Animal.name{
-            soundName = "wolverine_best"
+            soundName = "hulk_smash"
         }
         else if player1.name ==  Goldy.name{
-            soundName = "wolverine_best"
+            soundName = "rudrasa_bahubaliGoldy"
         }
         else if player1.name ==  Singham.name{
             soundName = "singham_awesome"
         }
         else if player1.name ==  Chikka.name{
-            soundName = "wolverine_best"
+            soundName = "jingu_chikka"
         }
         
         guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else { return }
@@ -161,10 +168,19 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
+    @IBAction func stopPlayer(){
+        if let player1 = player{
+            player1.stop()
+        }
+        self.overlayPauseView.isHidden = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: UITableView Methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if teamGenerated == false {
@@ -308,6 +324,7 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     //    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let player:Player
         if teamGenerated == false {
             player = allPlayers[indexPath.row]
@@ -322,8 +339,13 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         
         self.playSound(for: player)
+
+        self.overlayPauseView.isHidden = false
+
+        self.isSongPlaying = !(self.isSongPlaying)
     }
     
+    //  MARK: ---
     func changePresenceFor(player:Player,isPresent: Bool) {
         if isPresent == false {
             //Remove player
